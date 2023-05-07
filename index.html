@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./script.js"></script>
+</head>
+<body>
+    <h2>Q1. Write one example explaining how you can write a callback function.</h2>
+    <h3><pre> 
+        function add(a,b){
+            console.log(a+b);
+        }
+
+        function showresult(){
+            console.log(': is the total sum  ');
+        }
+        showresult(add(5,7));
+    </pre></h3>
+    <hr>
+    <h2>Q2."Write a callback function to print numbers from 1 to 7, in which 1 should be printed after 1 sec, 2 should be printed after 2 sec, 3 should be printed after 3 sec, and so on.             Explain callback hell.
+            Numbers
+            1
+            2
+            3
+            4
+            5
+            6
+            7"
+    </h2>
+    <h3><pre>
+        function print(num){
+            for(let i = 1 ;i <= num ; i++)
+            {
+                setTimeout(() => {
+                   console.log(i); 
+                }, i*(i+1)/2 * 1000);
+            }
+        }
+        print(7)
+    </pre></h3>
+    <hr>
+    <h2>Q3. "Write the promise function to print numbers from 1 to 7, in which 1 should be printed after 1 sec, 2 should be printed after 2 sec, 3 should be printed after 3 sec, and so on. 
+
+        Numbers
+        1
+        2
+        3
+        4
+        5
+        6
+        7"</h2>
+        <h3><pre>
+
+        </pre></h3>
+        <hr>
+    <h2>Q4. "Create a promise function accepting an argument, if yes is passed to the function then it should go to resolved state and print Promise Resolved, and if nothing is passed 
+        then it should go to reject the state and catch the error and print Promise Rejected "</h2>
+    <h3><pre>
+        let c= 10;
+        let abc = new Promise((res , rej) => {
+
+            if(c === 10 )
+            {
+                res('promise resolved.....!')
+            }
+            else{
+                rej('failed..!')
+            }
+        }
+        )
+        abc.then((data)=>console.log(data)).catch((data)=> console.log(data));
+    </pre></h3>
+    <hr>
+    <h2>Q5. Create examples to explain callback function</h2>
+    <h3><pre>
+        function add(a,b){
+            console.log(a+b);
+        }
+
+        function showresult(){
+            console.log(': is the total sum  ');
+        }
+        showresult(add(5,7));
+    </pre></h3>
+    <hr>
+    <h2>Q6. Create examples to explain callback hell function</h2>
+    <h3><pre>function abc(){
+        console.log("abc function");
+        function bcd(abc){
+            console.log("bcd function");
+            function def(){
+            console.log("def function");
+            }def()
+        }bcd()
+    }abc()
+
+    </pre></h3>
+    <hr>
+    <h2>Q7. Create examples to explain promises function</h2>
+    <h3><pre>
+        let c= 10;
+        let abc = new Promise((res , rej) => {
+
+            if(c === 10 )
+            {
+                res('promise resolved.....!')
+            }
+            else{
+                rej('failed..!')
+            }
+        }
+        )
+        abc.then((data)=>console.log(data)).catch((data)=> console.log(data));
+    </pre></h3>
+    <h2>Q8. Create examples to explain async await function</h2>
+    <h3><pre>
+        sync function myDisplay() {
+            let myPromise = new Promise(function(resolve, reject) {
+              resolve("God is almighty !!");
+            });
+            await myPromise;
+          }
+          myDisplay();
+    </pre></h3>
+    <hr>
+    <h2>Q9. Create examples to explain promise.all function</h2>
+    <h3><pre>
+        const promise1 = Promise.resolve(3);
+        const promise2 = 42;
+        const promise3 = new Promise((resolve, reject) => {
+        setTimeout(resolve, 100, 'foo');
+        });
+
+        Promise.all([promise1, promise2, promise3]).then((values) => {
+        console.log(values);
+        });
+    </pre></h3>
+</body>
+</html>
